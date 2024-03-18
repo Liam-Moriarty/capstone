@@ -7,10 +7,10 @@ const App = () => {
       <main className="relative">
         <Navbar />
         <Routes>
-          {/* <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/adoption" element={<Adoption />} />
-          <Route path="/rescue" element={<Rescue />} /> */}
+          <Route path="/rescue" element={<Rescue />} />
         </Routes>
       </main>
     </Router>

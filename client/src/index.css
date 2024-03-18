@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,8 +12,17 @@
   color: #edf0f1;
 }
 
-body {
+body,
+main {
   background-color: #101624;
+  /* background-image: radial-gradient(
+    circle,
+    #101624,
+    #141b2c,
+    #182135,
+    #1d263d,
+    #212c46
+  ); */
 }
 
 @layer components {
@@ -55,5 +63,11 @@ body {
 
   .info-text {
     @apply font-montserrat text-slate-gray text-lg leading-7;
+  }
+
+  .button {
+    @apply flex justify-center items-center gap-2 max-sm:px-4 
+    max-sm:py-2 px-7 py-4 font-poppins text-lg max-sm:text-base 
+    leading-none font-bold rounded-full text-white-primary bg-cyber-blue;
   }
 }

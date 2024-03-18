@@ -5,18 +5,17 @@ export default {
     fontSize: {
       xs: ["12px", "16px"],
       sm: ["14px", "20px"],
-      base: ["16px", "19.5px"],
+      base: ["16px", "28.5px"],
       lg: ["18px", "21.94px"],
       xl: ["20px", "24.38px"],
       "2xl": ["24px", "29.26px"],
       "3xl": ["28px", "50px"],
       "4xl": ["48px", "58px"],
-      "8xl": ["96px", "106px"],
+      "8xl": ["65px", "78px"],
     },
     extend: {
       fontFamily: {
-        palanquin: ["Palanquin", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         primary: "#101624", // primary
@@ -25,6 +24,9 @@ export default {
         "slate-gray": "#6D6D6D",
         "pale-blue": "#141b2d", // secondary
         "white-400": "rgba(255, 255, 255, 0.80)", // white optional
+      },
+      boxShadow: {
+        "3xl": "0 0 50px rgba(0, 0, 0, 0.8)",
       },
       screens: {
         wide: "1440px",
