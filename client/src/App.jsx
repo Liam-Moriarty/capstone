@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, About, Adoption, Rescue } from "./pages";
+import { Home, Adoption, Rescue, Blogs } from "./pages";
 const App = () => {
   return (
     <Router>
@@ -8,7 +8,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/adoption" element={<Adoption />} />
           <Route path="/rescue" element={<Rescue />} />
         </Routes>
