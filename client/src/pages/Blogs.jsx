@@ -1,7 +1,9 @@
-import React from "react";
-
 const Blogs = () => {
-  return <div>Blogs</div>;
+  return (
+    <section className="max-container min-h-screen padding-t dark:text-white-primary text-black-text">
+      blogs
+    </section>
+  );
 };
 
 export default Blogs;

@@ -8,10 +8,10 @@ import {
 } from "../assets/images";
 
 export const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Blogs", path: "/blogs" },
-  { label: "Adoption", path: "/adoption" },
-  { label: "Rescue", path: "/rescue" },
+  { label: "HOME", path: "/" },
+  { label: "BLOGS", path: "/blogs" },
+  { label: "ADOPTION", path: "/adoption" },
+  { label: "RESCUE", path: "/rescue" },
 ];
 
 export const aboutCard = [

@@ -1,6 +1,5 @@
-import Accordion from "../components/Accordion";
-import PhotoCards from "../home-section/PhotoCards";
-import { About, Landing, AboutCards, Footer } from "../home-section/index";
+import { Accordion, Footer } from "../components/index";
+import { About, Landing, AboutCards, PhotoCards } from "../sections/home/index";
 
 const Home = () => {
   return (

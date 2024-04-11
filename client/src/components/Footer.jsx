@@ -1,5 +1,5 @@
 import React from "react";
-import { footerLinks, socialMedia } from "../constant";
+import { footerLinks, socialMedia } from "../constant/index.js";
 import { copyRight, logo } from "../assets/logo/index.js";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         {/* HEADER */}
         <div className="flex justify-between w-full items-center">
           <img src={logo} alt="logo" className="w-[90px] h-[90px]" />
-          <h1 className="text-base text-cyber-blue font-semibold font-poppins">
+          <h1 className="text-base dark:text-cyber-blue text-slate-blue font-semibold font-poppins">
             Pet's Connect
           </h1>
         </div>
@@ -18,12 +18,16 @@ const Footer = () => {
         <div className="grid max-md:grid-cols-1 max-lg:grid-cols-2 grid-cols-4 gap-4">
           {/* SOCIAL */}
           <div className="p-4">
-            <h1 className="text-base text-cyber-blue font-semibold font-poppins">
+            <h1 className="text-base dark:text-cyber-blue text-slate-blue font-semibold font-poppins">
               Our Socials
             </h1>
             <div className="flex justify-start items-center gap-5 mt-5">
               {socialMedia.map((social) => (
-                <div className="flex justify-center items-center bg-white-primary rounded-full w-12 h-12">
+                <div
+                  key={social.alt}
+                  className="flex justify-center items-center dark:bg-white-primary 
+                  bg-slate-blue rounded-full w-12 h-12"
+                >
                   <img
                     src={social.src}
                     alt={social.alt}
@@ -38,13 +42,13 @@ const Footer = () => {
           {/* FOOTER LINKS */}
           {footerLinks.map((section) => (
             <div key={section.title} className="flex flex-col p-4">
-              <h1 className="text-base text-cyber-blue font-semibold font-poppins">
+              <h1 className="text-base dark:text-cyber-blue text-slate-blue font-semibold font-poppins">
                 {section.title}
               </h1>
               <ul>
                 {section.links.map((link) => (
                   <li
-                    className="text-base text-white-primary font-poppins font-normal"
+                    className="text-base dark:text-white-primary text-black-text font-poppins font-normal"
                     key={link.label}
                   >
                     <a href={link.link}>{link.label}</a>
@@ -57,7 +61,7 @@ const Footer = () => {
 
         {/* COPYRIGHT */}
         <div className="flex items-center">
-          <div className="w-full py-12 border-t border-white-primary">
+          <div className="w-full py-12 border-t dark:border-white-primary border-slate-blue">
             <div className="flex justify-between items-center">
               <div className="flex justify-center items-center gap-2">
                 <img
@@ -67,10 +71,14 @@ const Footer = () => {
                   height={20}
                   className="rounded-full m-0"
                 />
-                <p>Copyright. All rights reserved.</p>
+                <p className="dark:text-white-primary text-black-text">
+                  Copyright. All rights reserved.
+                </p>
               </div>
               <div>
-                <p>Terms & Conditions</p>
+                <p className="dark:text-white-primary text-black-text">
+                  Terms & Conditions
+                </p>
               </div>
             </div>
           </div>

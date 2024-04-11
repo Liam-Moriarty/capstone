@@ -12,19 +12,6 @@
   color: #edf0f1;
 }
 
-body,
-main {
-  background-color: #101624;
-  /* background-image: radial-gradient(
-    circle,
-    #101624,
-    #141b2c,
-    #182135,
-    #1d263d,
-    #212c46
-  ); */
-}
-
 @layer components {
   .max-container {
     max-width: 1440px;
@@ -61,14 +48,13 @@ main {
     @apply sm:pb-24 pb-12;
   }
 
-  .info-text {
-    @apply font-montserrat text-slate-gray text-lg leading-7;
+  .input {
+    @apply max-md:text-sm dark:bg-pale-blue bg-white-second w-full pl-2 text-white-primary 
+    border-none outline-none text-base rounded-lg;
   }
 
-  .button {
-    @apply flex justify-center items-center gap-2 max-sm:px-4 
-    max-sm:py-2 px-7 py-4 font-poppins text-lg max-sm:text-base 
-    leading-none font-bold rounded-full text-white-primary bg-cyber-blue;
+  .label {
+    @apply text-base dark:text-cyber-blue text-slate-blue font-poppins font-semibold;
   }
 }
 /* Scrollbar Design with Compatibility to some browsers */
