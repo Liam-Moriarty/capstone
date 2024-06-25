@@ -1,7 +1,11 @@
 import { CardHeader, Button } from "./index";
-import { data } from "../data/data";
+import { MockData } from "../data/data.js";
+import { useGetAllAdoptionQuery } from "../redux/api.js";
 
 const AdoptionCards = () => {
+  const { data: adoptionData, isLoading } = useGetAllAdoptionQuery();
+  console.log("🚀 ~ AdoptionCards ~ adoptionData:", adoptionData);
+
   function toSentenceCase(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   }
@@ -13,7 +17,7 @@ const AdoptionCards = () => {
 
       {/* Cards*/}
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 py-10">
-        {data.map((item) => (
+        {MockData.map((item) => (
           <div key={item.id} className="dark:bg-pale-blue">
             <div className="w-full h-auto">
               <img

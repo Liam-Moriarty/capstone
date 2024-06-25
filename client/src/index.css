@@ -19,6 +19,14 @@
   }
 }
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;
@@ -49,8 +57,7 @@
   }
 
   .input {
-    @apply max-md:text-sm dark:bg-pale-blue bg-white-second w-full pl-2 text-white-primary 
-    border-none outline-none text-base rounded-lg;
+    @apply max-md:text-sm dark:bg-pale-blue bg-white-second w-full pl-2 text-black-text dark:text-white-primary border-none outline-none text-base rounded-lg py-2;
   }
 
   .label {

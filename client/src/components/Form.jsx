@@ -1,193 +1,140 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import { useAddNewAdoptionMutation } from "../redux/api";
 
 const Form = () => {
+  const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [color, setColor] = useState("");
-  const [size, setSize] = useState("");
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
   const [type, setType] = useState("");
-  const [health, setHealth] = useState("");
-  const [behavior, setBehavior] = useState("");
-  const [location, setLocation] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [image, setImage] = useState("");
   const [error, setError] = useState("");
 
+  const [addNewAdoption] = useAddNewAdoptionMutation();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!name || !breed || !color || !gender || !age || !type) {
+      setError("All fields are required!!");
+      return;
+    }
+
+    try {
+      await addNewAdoption({
+        name,
+        breed,
+        color,
+        gender,
+        age,
+        type,
+        // image,
+      });
+
+      setName("");
+      setBreed("");
+      setColor("");
+      setGender("");
+      setAge("");
+      setType("");
+      // setImage("");
+      setError("");
+    } catch (error) {
+      setError("Something went wrong!");
+    }
+  };
+
   return (
-    <section className="flex justify-center items-center flex-col padding-x">
-      {/* HEADER */}
-      <h1 className="text-3xl dark:text-cyber-blue text-slate-blue font-poppins font-bold mb-5">
-        RESCUE FORM
-      </h1>
-
-      {/* FORMS */}
-      <form action="" className="md:columns-2">
-        {/* IMG */}
-        <div>
-          <img src="" alt="" />
-        </div>
-
-        {/* INPUTS */}
-
-        {/* PHYSICAL DESCRIPTION */}
-
-        <div className="flex justify-start flex-col gap-2">
-          <h2 className="text-base dark:text-white-primary text-black-text font-poppins font-bold">
-            PHYSICAL DESCRIPTION:
-          </h2>
-
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
-            <label className="label">Breed:</label>
+    <section className="max-container h-auto padding flex justify-center ">
+      <form onSubmit={onSubmit} className="lg:w-3/4 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div className="flex flex-col">
+            <label className="label">Name:</label>
             <input
               type="text"
-              onChange={(e) => setBreed(e.target.value)}
-              value={breed}
               className="input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
+          <div className="flex flex-col">
+            <label className="label">Age:</label>
+            <input
+              type="number"
+              className="input"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols md:grid-cols-2 gap-5 mb-5">
+          <div className="flex flex-col">
             <label className="label">Color:</label>
             <input
               type="text"
-              onChange={(e) => setColor(e.target.value)}
-              value={color}
               className="input"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
             />
           </div>
 
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
-            <label className="label">Size:</label>
+          <div className="flex flex-col">
+            <label className="label">Breed:</label>
             <input
               type="text"
-              onChange={(e) => setSize(e.target.value)}
-              value={size}
               className="input"
+              value={breed}
+              onChange={(e) => setBreed(e.target.value)}
             />
           </div>
+        </div>
 
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
+        <div className="grid grid-cols md:grid-cols-2 gap-5 mb-5">
+          <div className="flex flex-col">
             <label className="label">Gender:</label>
             <input
               type="text"
-              onChange={(e) => setGender(e.target.value)}
+              className="input"
               value={gender}
-              className="input"
+              onChange={(e) => setGender(e.target.value)}
             />
           </div>
 
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
-            <label className="label w-full">Age:</label>
-            <input
-              type="text"
-              onChange={(e) => setAge(e.target.value)}
-              value={age}
-              className="input"
-            />
-          </div>
-
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
+          <div className="flex flex-col">
             <label className="label">Type:</label>
             <input
               type="text"
-              onChange={(e) => setType(e.target.value)}
+              className="input"
               value={type}
-              className="input"
+              onChange={(e) => setType(e.target.value)}
             />
           </div>
         </div>
 
-        {/* HEALTH STATUS */}
+        {/* <div>
+          <label className="label">Send Image:</label>
+          <input
+            type="file"
+            className="input"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+        </div> */}
 
-        <div className="break-after-column">
-          <h2 className="text-base dark:text-white-primary text-black-text font-poppins font-bold">
-            HEALTH STATUS:
-          </h2>
-          <textarea
-            name=""
-            id=""
-            placeholder="Enter here!"
-            onChange={(e) => setHealth(e.target.value)}
-            value={health}
-            className="w-full outline-none dark:bg-pale-blue bg-white-second text-base font-poppins font-medium p-2"
-          ></textarea>
+        <div className="flex justify-center items-center">
+          <Button
+            children="Submit"
+            type="submit"
+            submit
+            className="my-10 md:w-[10rem]"
+            onClick={onSubmit}
+          />
         </div>
-
-        {/* BEHAVIORAL OBSERVATION */}
-        <div>
-          <h2 className="text-base dark:text-white-primary text-black-text font-poppins font-bold">
-            BEHAVIORAL OBSERVATION:
-          </h2>
-          <textarea
-            name=""
-            id=""
-            placeholder="Enter here!"
-            onChange={(e) => setBehavior(e.target.value)}
-            value={behavior}
-            className="w-full outline-none dark:bg-pale-blue bg-white-second text-base font-poppins font-medium p-2"
-          ></textarea>
-        </div>
-
-        {/* FOUND LOCATION */}
-        <div>
-          <h2 className="text-base dark:text-white-primary text-black-text font-poppins font-bold">
-            FOUND LOCATION:
-          </h2>
-          <textarea
-            name=""
-            id=""
-            placeholder="Enter here!"
-            onChange={(e) => setLocation(e.target.value)}
-            value={location}
-            className="w-full outline-none dark:bg-pale-blue bg-white-second text-base font-poppins font-medium p-2"
-          ></textarea>
-        </div>
-
-        {/* YOUR CONTACT INFORMATION */}
-        <div className="flex justify-start flex-col gap-2">
-          <h2 className="text-base dark:text-white-primary text-black-text font-poppins font-bold">
-            CONTACT INFORMATION:
-          </h2>
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
-            <label className="label">Email:</label>
-            <input
-              type="text"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              className="input"
-            />
-          </div>
-
-          <div className="w-full dark:bg-pale-blue bg-white-second flex justify-center items-center pl-5">
-            <label className="label">Phone:</label>
-            <input
-              type="text"
-              onChange={(e) => setPhone(e.target.value)}
-              value={phone}
-              className="input"
-            />
-          </div>
-
-          {/* BUTTONS */}
-          <div className="flex flex-col justify-center items-center gap-3">
-            <Button
-              label="Add Image"
-              padding="py-2"
-              text="text-sm"
-              border="rounded-md"
-              color="bg-pale-blue"
-            />
-
-            <Button
-              label="Submit"
-              padding="py-2"
-              text="text-sm"
-              border="rounded-md"
-            />
-          </div>
-        </div>
+        {error && <p className="text-red-500">{error}</p>}
       </form>
     </section>
   );

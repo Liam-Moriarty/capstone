@@ -11,7 +11,7 @@ export const navLinks = [
   { label: "HOME", path: "/" },
   { label: "BLOGS", path: "/blogs" },
   { label: "ADOPTION", path: "/adoption" },
-  { label: "RESCUE", path: "/rescue" },
+  { label: "FORM", path: "/createAdoption" },
 ];
 
 export const aboutCard = [

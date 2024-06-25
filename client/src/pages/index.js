@@ -1,6 +1,6 @@
 import Home from "./Home";
 import Blogs from "./Blogs";
 import Adoption from "./Adoption";
-import Rescue from "./Rescue";
+import AdoptionForm from "./AdoptionForm";
 
-export { Home, Blogs, Adoption, Rescue };
+export { Home, Blogs, Adoption, AdoptionForm };

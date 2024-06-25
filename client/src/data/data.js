@@ -6,7 +6,7 @@ import {
   cardPhoto4,
 } from "../assets/images/index";
 
-export const data = [
+export const MockData = [
   {
     id: 1,
     imgURL: aboutBG,
@@ -58,7 +58,7 @@ export const data = [
     type: "cat",
   },
   {
-    id: 5,
+    id: 6,
     imgURL: cardPhoto4,
     name: "Oliver",
     age: 1,
@@ -68,7 +68,7 @@ export const data = [
     type: "cat",
   },
   {
-    id: 5,
+    id: 7,
     imgURL: cardPhoto4,
     name: "Oliver",
     age: 1,
@@ -78,7 +78,7 @@ export const data = [
     type: "cat",
   },
   {
-    id: 5,
+    id: 8,
     imgURL: cardPhoto4,
     name: "Oliver",
     age: 1,

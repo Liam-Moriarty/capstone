@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar, ToggleMode } from "./components/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Adoption, Rescue, Blogs } from "./pages";
+import { Home, Adoption, AdoptionForm, Blogs } from "./pages";
 import { ThemeProvider } from "./context/themeContext";
 
 const App = () => {
@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/adoption" element={<Adoption />} />
-            <Route path="/rescue" element={<Rescue />} />
+            <Route path="/createAdoption" element={<AdoptionForm />} />
           </Routes>
         </main>
       </Router>

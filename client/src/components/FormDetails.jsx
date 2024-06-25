@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { MockData } from "../data/data";
 import { CardHeader } from "./index";
 
 const FormDetails = () => {
@@ -6,7 +6,7 @@ const FormDetails = () => {
     <section className="padding-x py-8 max-h-screen overflow-hidden overflow-y-scroll mt-10">
       <CardHeader />
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 py-10">
-        {data.map((item) => (
+        {MockData.map((item) => (
           <div
             key={item.id}
             className="flex justify-center items-center flex-col"

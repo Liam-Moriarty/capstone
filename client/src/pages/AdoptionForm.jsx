@@ -5,7 +5,7 @@ const Rescue = () => {
     <section className="max-container min-h-screen padding-t">
       {/* PAGE TITLE */}
       <Title
-        title="Rescue and Save a Life"
+        title="Adoption Form"
         description="  “Embark on a Journey of Love and Companionship - Open Your Heart and
         Home to a Furry Friend in Need. By Choosing Adoption, You’re Not Just
         Saving a Life, You’re Completing Your Family. Every Whisker, Wag, and
@@ -17,7 +17,7 @@ const Rescue = () => {
       <Form />
 
       {/* FORM DETAILS */}
-      <FormDetails />
+      {/* <FormDetails /> */}
 
       {/* FOOTER TITLE */}
       <Footer />
