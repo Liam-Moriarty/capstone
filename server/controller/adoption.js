@@ -10,7 +10,7 @@ export const getAdoption = async (req, res) => {
 };
 
 export const sendAdoption = async (req, res) => {
-  const { name, age, color, breed, gender, type } = req.body;
+  const { name, age, color, breed, gender, type, image } = req.body;
   try {
     const adoption = await Adoption.create({
       name,
@@ -19,7 +19,7 @@ export const sendAdoption = async (req, res) => {
       breed,
       gender,
       type,
-      // image,
+      image,
     });
     res.status(200).json(adoption);
   } catch (error) {

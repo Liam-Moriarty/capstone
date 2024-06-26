@@ -6,18 +6,8 @@ const CardHeader = () => {
     <div className="flex justify-between items center w-full">
       {/* Left Section */}
       <div className="flex justify-between items-center sm:gap-5 gap-2">
-        <Button
-          label="Cats"
-          padding="py-2"
-          text="text-sm"
-          border="rounded-md"
-        />
-        <Button
-          label="Dogs"
-          padding="py-2"
-          text="text-sm"
-          border="rounded-md"
-        />
+        <Button children="Cat" type="search" submit />
+        <Button children="Dog" type="search" submit />
       </div>
       {/* Right Section */}
       <div

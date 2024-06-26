@@ -5,6 +5,7 @@ import {
   FaEdit,
   FaTrashAlt,
   FaPaperPlane,
+  FaPaw,
 } from "react-icons/fa";
 
 const Button = ({ type, onClick, children, icon, className, submit }) => {
@@ -17,6 +18,8 @@ const Button = ({ type, onClick, children, icon, className, submit }) => {
       "dark:bg-cyber-blue bg-slate-blue text-dark-font-secondary hover:bg-blue-700 w-full justify-center py-2",
     done: "bg-green-600 text-dark-font-secondary hover:bg-green-700 py-1",
     pending: "bg-slate-500 text-dark-font-secondary hover:bg-green-700 py-1",
+    search:
+      "dark:bg-cyber-blue bg-slate-blue text-dark-font-secondary hover:bg-blue-700 w-full justify-center py-1",
   };
 
   const IconComponent =
@@ -27,6 +30,7 @@ const Button = ({ type, onClick, children, icon, className, submit }) => {
       submit: FaPaperPlane,
       done: FaCheckCircle,
       pending: FaClock,
+      search: FaPaw,
     }[type];
 
   const buttonStyle = `${baseStyle} ${typeStyles[type] || ""} ${className}`;
